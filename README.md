@@ -22,9 +22,9 @@ and run the above command again to use SSE transport to connect over Http.
 
 ## Testing the MCP Server
 
-If you are running the server with http/sse, use test_mcp_client_http.py
+If you are running the server with http/sse, use test_client_http.py
 
-If you are not running the server, you can just run test_mcp_client_local.py
+If you are not running the server, you can just run test_client_local.py
 to run the server in stdio transport mode.
 
 ## Testing with Claude Desktop
