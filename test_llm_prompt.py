@@ -2,7 +2,7 @@ import ollama
 import asyncio
 from mcp import ClientSession, StdioServerParameters
 from mcp.client.stdio import stdio_client
-import getpass
+import os
 
 async def run_chat_prompt():
     server_params = StdioServerParameters(
@@ -28,12 +28,7 @@ async def run_chat_prompt():
                 for tool in mcp_tools.tools
             ]
 
-            user = ""
-            try:
-                user = getpass.getpass()
-            except Exception as e:
-                print(f"Could not determine the username: {e}")
-
+            user = os.getenv('USER') or os.getenv('USERNAME') or os.getlogin()
             messages = []
             print("------------------------- MCP Chat Started (Type 'quit' to exit) ------------------------")
             while True:
